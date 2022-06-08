@@ -34,3 +34,18 @@ public class AllShortestPath {
 	}
 
 }
+
+
+/*
+OUTPUT
+------
+enter the number of vertices : 3
+Enter the cost adjacency matrix :
+0 4 11
+6 0 2
+3 99 0
+The shortest path matrix :
+0 4 6
+5 0 2
+3 7 0
+*/
