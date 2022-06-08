@@ -101,3 +101,31 @@ public class JobSeq {
 	}
 
 }
+
+
+/*
+OUTPUT:
+-------
+Enter the number of jobs:5
+Enter job : j1
+Enter profit: 20
+Enter dead line: 2
+Enter job : j2
+Enter profit: 15
+Enter dead line: 2
+Enter job : j3
+Enter profit: 10
+Enter dead line: 1
+Enter job : j4
+Enter profit: 5
+Enter dead line: 3
+Enter job : j5
+Enter profit: 1
+Enter dead line: 3
+------Sorted order-------
+Jobs: j1 j2 j3 j4 j5
+Profit: 20 15 10 5 1
+Deadline: 2 2 1 3 3
+-->j2-->j1-->j4
+Profit earned: 40
+*/
