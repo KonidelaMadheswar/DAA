@@ -84,3 +84,25 @@ System.out.println("Enter the size of the array : ");
 
 
 }
+
+
+/*
+OUTPUT:
+-------
+Enter the size of the array :
+5
+Enter 5 elements :
+2 8 4 6 12
+Enter element to be searched :
+12
+1.Iterator      2.Recursive
+Enter your choice
+1
+Element founded at 4
+Time complexity Iterator: 8.869E-4
+1.Iterator      2.Recursive
+Enter your choice
+2
+Element founded at 4
+Time complexity for recersive: 6.07E-4
+*/
