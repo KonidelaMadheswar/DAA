@@ -64,3 +64,18 @@ public class Kruskal {
 		}
 
 }
+
+/*
+output:-
+-------
+Enter no of vertices : 4
+Enter the Cost matrix :
+0 3 4 10
+3 0 20 5
+4 20 0 6
+10 5 6 0
+1 - 2 -> 3
+1 - 3 -> 4
+2 - 4 -> 5
+Cost of the spanning Tree = 12
+*/
