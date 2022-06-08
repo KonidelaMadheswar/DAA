@@ -84,3 +84,19 @@ public class Knapsack {
 	}
 
 }
+
+/* 
+OUTPUT:
+------
+Enter number of objects : 4
+Enter profit and weight : 10 2
+Enter profit and weight : 20 4
+Enter profit and weight : 30 5
+Enter profit and weight : 40 4
+Enter Knapsack weight : 10
+After sorting according to the p/w ratio
+OBJECT : 1 2 3 4
+PROFIT : 40 30 10 20
+WEIGHT : 4 5 2 4
+MAX PROFIT = 75.0
+*/
