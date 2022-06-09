@@ -1,56 +1,72 @@
-import java.util.Scanner;
-public class NQueen
-{
-    public static void main(String[] args)
-    {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the value of n");
-        int n=sc.nextInt();
-        char board[][]=new char[n][n];
-        for(int i=0;i<n;i++)
-            for(int j=0;j<n;j++)
-                board[i][j]='-';
-        if(solveNQueens(board,0,n)) solution(board,n);
-        else System.out.println("No solution exists");
-    }
-    public static void solution(char board[][], int n)
-    {
-        for(int i=0;i<n;i++)
-        {
-            for(int j=0;j<n;j++)
-                System.out.print(" "+board[i][j]+" ");
-            System.out.println();
-        }
-    }
-    public static boolean isSafe(char board[][], int row, int column, int n)
-    {
-        int i,j;
-        for(i=0;i<column;i++)
-        {
-            if(board[row][i]=='Q') return false;
-        }
-        for(i=row,j=column; i>=0 && j>=0;i--,j--)
-        {
-            if(board[i][j]=='Q') return false;
-        }
-        for(i=row,j=column; i<n && j>=0;i++,j--)
-        {
-            if(board[i][j]=='Q') return false;
-        }
-        return true;
-    }
-    public static boolean solveNQueens(char board[][], int column, int n)
-    {
-        if(column>=n) return true;
-        for(int i=0;i<n;i++)
-        {
-            if(isSafe(board,i,column,n))
-            {
-                board[i][column]='Q';
-                if(solveNQueens(board, column+1,n)) return true;
-                board[i][column]='-';
-            }
-        }
-        return false;
-    }
-}
+import java.util.*;
+public class NQueens {
+	static int count=0;
+	    public static boolean isSafe(char[][] mat, int r, int c)
+	    {
+	        for (int i = 0; i < r; i++)
+	        {
+	            if (mat[i][c] == 'Q') {
+	                return false;
+	            }
+	        }
+	 
+	        for (int i = r, j = c; i >= 0 && j >= 0; i--, j--)
+	        {
+	            if (mat[i][j] == 'Q') {
+	                return false;
+	            }
+	        }
+	 
+	        for (int i = r, j = c; i >= 0 && j < mat.length; i--, j++)
+	        {
+	            if (mat[i][j] == 'Q') {
+	                return false;
+	            }
+	        }
+	 
+	        return true;
+	    }
+	 
+	    private static void printSolution(char[][] mat)
+	    {
+	        for (char[] chars: mat) {
+	            System.out.println(Arrays.toString(chars).replaceAll(",", ""));
+	        }
+	        System.out.println();
+	        
+	        count++;
+	    }
+	 
+	    private static void nQueen(char[][] mat, int r)
+	    {
+	        if (r == mat.length)
+	        {
+	            printSolution(mat);
+	            return;
+	        }
+	        for (int i = 0; i < mat.length; i++)
+	        {
+	            if (isSafe(mat, r, i))
+	            {
+	                mat[r][i] = 'Q'; 
+	                nQueen(mat, r + 1);
+	                mat[r][i] = '–';
+	            }
+	        }
+	    }
+	 
+	    public static void main(String[] args)
+	    {
+	        int N;
+	        Scanner sc=new Scanner(System.in);
+	        System.out.print("Enter number of Queens");	  
+	        N=sc.nextInt();
+	        char[][] mat = new char[N][N];
+	        for (int i = 0; i < N; i++) {
+	            Arrays.fill(mat[i], '–');
+	        }
+	 
+	        nQueen(mat, 0);
+	        System.out.println(count);
+	    }
+	}
