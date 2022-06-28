@@ -27,14 +27,18 @@ public class NQueens {
 	        return true;
 	    }
 	 
-	    private static void printSolution(char[][] mat)
+	   private static void printSolution(char[][] mat)
 	    {
-	        for (char[] chars: mat) {
-	            System.out.println(Arrays.toString(chars).replaceAll(",", ""));
-	        }
-	        System.out.println();
-	        
-	        count++;
+		for(int i=0;i<mat.length;i++)
+        	{
+            		for(int j=0;j<mat.length;j++)
+            		{	
+            			if(mat[i][j]=='Q')
+            				System.out.print(" "+(j+1)+" ");
+            		}
+        	}
+        	count++;
+        	System.out.println();
 	    }
 	 
 	    private static void nQueen(char[][] mat, int r)
